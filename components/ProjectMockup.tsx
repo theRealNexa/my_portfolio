@@ -34,7 +34,7 @@ function Pill({ x, y, w = 40, color }: { x: number; y: number; w?: number; color
   );
 }
 
-function XMail() {
+function Websites() {
   const bars = [30, 44, 38, 62, 50, 74, 58, 82, 66, 90, 72, 96];
   return (
     <>
@@ -98,7 +98,7 @@ function XMail() {
   );
 }
 
-function Fintech() {
+function Systems() {
   return (
     <>
       <Chrome dark />
@@ -157,7 +157,7 @@ function Fintech() {
   );
 }
 
-function StudyHub() {
+function OpenSource() {
   const rows = [GREEN, AMBER, BLUE, GREEN, AMBER];
   return (
     <>
@@ -225,9 +225,9 @@ export function ProjectMockup({ variant, label }: { variant: MockupVariant; labe
       className="h-full w-full"
       preserveAspectRatio="xMidYMin slice"
     >
-      {variant === "xmail" && <XMail />}
-      {variant === "fintech" && <Fintech />}
-      {variant === "studyhub" && <StudyHub />}
+      {variant === "websites" && <Websites />}
+      {variant === "systems" && <Systems />}
+      {variant === "opensource" && <OpenSource />}
     </svg>
   );
 }
