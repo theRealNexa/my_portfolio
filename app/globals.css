@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: 248 247 243;
+  --ink: 23 24 23;
+  --sub: 114 119 131;
+  --mute: 133 139 149;
+  --line: 229 228 223;
+  --card: 250 249 246;
+  --wash: 231 232 229;
+  --accent: 91 143 249;
+  --btn-bg: 32 33 31;
+  --btn-fg: 255 255 255;
+  color-scheme: light;
+}
+
+.dark {
+  --bg: 18 19 18;
+  --ink: 236 236 231;
+  --sub: 154 159 169;
+  --mute: 125 130 139;
+  --line: 41 42 39;
+  --card: 23 24 22;
+  --wash: 30 31 29;
+  --accent: 111 156 250;
+  --btn-bg: 236 236 231;
+  --btn-fg: 23 24 23;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    background: rgb(var(--bg));
+    -webkit-text-size-adjust: 100%;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+  body {
+    @apply bg-bg font-sans text-[14px] leading-[1.7] text-ink antialiased md:text-[13px];
+    overflow-x: hidden;
+  }
+  :focus-visible {
+    outline: 2px solid rgb(var(--accent));
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+  section[id] {
+    scroll-margin-top: 72px;
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-5 md:px-8 xl:px-[5%];
+  }
+  .label-mono {
+    @apply font-mono text-[10px] uppercase tracking-[0.14em] text-ink/80 md:text-[9px];
+  }
+  .heading-serif {
+    @apply font-serif font-normal text-ink;
+  }
+}
+
+/* ---------- Motion (all CSS, disabled for reduced motion) ---------- */
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.enter {
+  animation: enter 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0ms);
+}
+.enter-fade {
+  animation: fade 0.8s ease-out both;
+  animation-delay: var(--d, 0ms);
+}
+
+.reveal {
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--d, 0ms);
+}
+.reveal-hidden {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter,
+  .enter-fade {
+    animation: none;
+  }
+  .reveal,
+  .reveal-hidden {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}
