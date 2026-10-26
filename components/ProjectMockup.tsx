@@ -225,9 +225,9 @@ export function ProjectMockup({ variant, label }: { variant: MockupVariant; labe
       className="h-full w-full"
       preserveAspectRatio="xMidYMin slice"
     >
-      {variant === "websites" && <Websites />}
-      {variant === "systems" && <Systems />}
-      {variant === "opensource" && <OpenSource />}
+      {variant === "websites" && <websites />}
+      {variant === "systems" && <systems />}
+      {variant === "opensource" && <opensource />}
     </svg>
   );
 }
