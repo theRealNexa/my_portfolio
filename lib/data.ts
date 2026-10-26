@@ -69,7 +69,7 @@ export const projects: Project[] = [
     description:
       "Concept website for a Nigerian architecture studio",
     href: "https://monolith-build-architecture-studio.vercel.app/",
-    mockup: "Websites",
+    mockup: "websites",
     featured: true,
     imageNote: "Websites",
     image: "/images/monolith-build.PNG",
@@ -82,9 +82,9 @@ export const projects: Project[] = [
     description:
       "Monitor bot for academic related issues buried in multiple group chats and DMs in WhatsApp and redirects to personal DMs via WhatsApp and Telegram.",
     href: "https://github.com/theRealNexa/AcadAlert/",
-    mockup: "Systems",
+    mockup: "systems",
     featured: true,
-    imageNote: "Systems",
+    imageNote: "systems",
     image: "/images/acadalert.PNG"
   },
   {
@@ -95,9 +95,9 @@ export const projects: Project[] = [
     description:
       "It processes raw text and specific document types, dynamically builds prompts, and proxies them to Large Language Models (LLMs) to return structured writing evaluations.",
     href: "https://essai-frontend.vercel.app/",
-    mockup: "OpenSource",
+    mockup: "opensource",
     featured: true,
-    imageNote: "OpenSource",
+    imageNote: "openSource",
     image: "/images/essaiai.PNG"
   },
 ];

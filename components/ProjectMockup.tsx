@@ -34,7 +34,7 @@ function Pill({ x, y, w = 40, color }: { x: number; y: number; w?: number; color
   );
 }
 
-function Websites() {
+function websites() {
   const bars = [30, 44, 38, 62, 50, 74, 58, 82, 66, 90, 72, 96];
   return (
     <>
@@ -98,7 +98,7 @@ function Websites() {
   );
 }
 
-function Systems() {
+function systems() {
   return (
     <>
       <Chrome dark />
@@ -157,7 +157,7 @@ function Systems() {
   );
 }
 
-function OpenSource() {
+function opensource() {
   const rows = [GREEN, AMBER, BLUE, GREEN, AMBER];
   return (
     <>
